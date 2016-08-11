@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <uri id="com.salesforce.ide.ui.xmlcatalog.metadata" name="http://soap.sforce.com/2006/04/metadata" uri="jar:file:/C:/eclipse/plugins/com.salesforce.ide.api_36.0.0.201601221512.jar!/schema/metadata.xsd"/>
+</catalog>

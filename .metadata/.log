@@ -1,0 +1,384 @@
+!SESSION 2016-08-11 20:44:46.099 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_60-ea
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 20:51:00.427
+!MESSAGE  WARN [2016-08-11 20:51:00,380] (BaseRetryAspect.java:isLoginExceptionRetryable:115) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 20:51:00.458
+!MESSAGE  WARN [2016-08-11 20:51:00,442] (BaseRetryAspect.java:isConnectionExceptionRetryable:150) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 20:51:00.458
+!MESSAGE  WARN [2016-08-11 20:51:00,458] (ProjectController.java:getRemotePackageNames:930) - Unable to get project packages for project 'New Project': Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 20:51:00.505
+!MESSAGE  WARN [2016-08-11 20:51:00,489] (ProjectOrganizationPage.java:prepareNextPage:263) - Unable to login: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 20:51:50.204
+!MESSAGE  WARN [2016-08-11 20:51:50,204] (BaseRetryAspect.java:isLoginExceptionRetryable:115) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 20:51:50.220
+!MESSAGE  WARN [2016-08-11 20:51:50,220] (BaseRetryAspect.java:isConnectionExceptionRetryable:150) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 20:51:50.235
+!MESSAGE  WARN [2016-08-11 20:51:50,220] (ProjectController.java:getRemotePackageNames:930) - Unable to get project packages for project 'New Project': Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 20:51:50.267
+!MESSAGE  WARN [2016-08-11 20:51:50,267] (ProjectOrganizationPage.java:prepareNextPage:263) - Unable to login: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:06:09.500
+!MESSAGE  WARN [2016-08-11 21:06:09,500] (BaseRetryAspect.java:isLoginExceptionRetryable:115) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:06:09.578
+!MESSAGE  WARN [2016-08-11 21:06:09,578] (BaseRetryAspect.java:isConnectionExceptionRetryable:150) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:06:09.594
+!MESSAGE  WARN [2016-08-11 21:06:09,594] (ProjectController.java:getRemotePackageNames:930) - Unable to get project packages for project 'new project': Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:06:09.625
+!MESSAGE  WARN [2016-08-11 21:06:09,625] (ProjectOrganizationPage.java:prepareNextPage:263) - Unable to login: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.285
+!MESSAGE  WARN [2016-08-11 21:36:03,283] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'Certificate': Unable to get bean for id 'Certificate'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.330
+!MESSAGE  WARN [2016-08-11 21:36:03,330] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'AuraDefinitionBundle': Unable to get bean for id 'AuraDefinitionBundle'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.345
+!MESSAGE  WARN [2016-08-11 21:36:03,345] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.361
+!MESSAGE  WARN [2016-08-11 21:36:03,361] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'NamedCredential': Unable to get bean for id 'NamedCredential'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.361
+!MESSAGE  WARN [2016-08-11 21:36:03,361] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'GlobalPicklist': Unable to get bean for id 'GlobalPicklist'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.392
+!MESSAGE  WARN [2016-08-11 21:36:03,392] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'CustomFeedFilter': Unable to get bean for id 'CustomFeedFilter'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.439
+!MESSAGE  WARN [2016-08-11 21:36:03,424] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'FlowDefinition': Unable to get bean for id 'FlowDefinition'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.486
+!MESSAGE  WARN [2016-08-11 21:36:03,486] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'MatchingRules': Unable to get bean for id 'MatchingRules'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.486
+!MESSAGE  WARN [2016-08-11 21:36:03,486] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'ChannelLayout': Unable to get bean for id 'ChannelLayout'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.502
+!MESSAGE  WARN [2016-08-11 21:36:03,502] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'SharingRules': Unable to get bean for id 'SharingRules'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.502
+!MESSAGE  WARN [2016-08-11 21:36:03,502] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'DelegateGroup': Unable to get bean for id 'DelegateGroup'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.517
+!MESSAGE  WARN [2016-08-11 21:36:03,517] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'CorsWhitelistOrigin': Unable to get bean for id 'CorsWhitelistOrigin'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.533
+!MESSAGE  WARN [2016-08-11 21:36:03,517] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'ActionLinkGroupTemplate': Unable to get bean for id 'ActionLinkGroupTemplate'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.533
+!MESSAGE  WARN [2016-08-11 21:36:03,533] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'TransactionSecurityPolicy': Unable to get bean for id 'TransactionSecurityPolicy'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.549
+!MESSAGE  WARN [2016-08-11 21:36:03,549] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'SynonymDictionary': Unable to get bean for id 'SynonymDictionary'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.549
+!MESSAGE  WARN [2016-08-11 21:36:03,549] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'PathAssistant': Unable to get bean for id 'PathAssistant'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:03.564
+!MESSAGE  WARN [2016-08-11 21:36:03,564] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'PlatformCachePartition': Unable to get bean for id 'PlatformCachePartition'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.671
+!MESSAGE  WARN [2016-08-11 21:36:04,671] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'Certificate': Unable to get bean for id 'Certificate'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.687
+!MESSAGE  WARN [2016-08-11 21:36:04,687] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'AuraDefinitionBundle': Unable to get bean for id 'AuraDefinitionBundle'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.702
+!MESSAGE  WARN [2016-08-11 21:36:04,702] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.721
+!MESSAGE  WARN [2016-08-11 21:36:04,718] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'NamedCredential': Unable to get bean for id 'NamedCredential'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.731
+!MESSAGE  WARN [2016-08-11 21:36:04,728] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'GlobalPicklist': Unable to get bean for id 'GlobalPicklist'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.753
+!MESSAGE  WARN [2016-08-11 21:36:04,753] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'CustomFeedFilter': Unable to get bean for id 'CustomFeedFilter'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.800
+!MESSAGE  WARN [2016-08-11 21:36:04,784] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'FlowDefinition': Unable to get bean for id 'FlowDefinition'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.816
+!MESSAGE  WARN [2016-08-11 21:36:04,816] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'MatchingRules': Unable to get bean for id 'MatchingRules'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.816
+!MESSAGE  WARN [2016-08-11 21:36:04,816] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'ChannelLayout': Unable to get bean for id 'ChannelLayout'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.831
+!MESSAGE  WARN [2016-08-11 21:36:04,831] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'SharingRules': Unable to get bean for id 'SharingRules'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.831
+!MESSAGE  WARN [2016-08-11 21:36:04,831] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'DelegateGroup': Unable to get bean for id 'DelegateGroup'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.847
+!MESSAGE  WARN [2016-08-11 21:36:04,847] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'CorsWhitelistOrigin': Unable to get bean for id 'CorsWhitelistOrigin'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.847
+!MESSAGE  WARN [2016-08-11 21:36:04,847] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'ActionLinkGroupTemplate': Unable to get bean for id 'ActionLinkGroupTemplate'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.863
+!MESSAGE  WARN [2016-08-11 21:36:04,863] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'TransactionSecurityPolicy': Unable to get bean for id 'TransactionSecurityPolicy'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.878
+!MESSAGE  WARN [2016-08-11 21:36:04,878] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'SynonymDictionary': Unable to get bean for id 'SynonymDictionary'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.878
+!MESSAGE  WARN [2016-08-11 21:36:04,878] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'PathAssistant': Unable to get bean for id 'PathAssistant'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:36:04.894
+!MESSAGE  WARN [2016-08-11 21:36:04,894] (ComponentFactory.java:getComponentBean:1149) - Unable to get component for id 'PlatformCachePartition': Unable to get bean for id 'PlatformCachePartition'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 21:40:10.635
+!MESSAGE  WARN [2016-08-11 21:40:10,635] (ProjectAddEvaluator.java:runInWorkspace:120) - No credentials found for project 'new project' - removing online nature
+
+
+!ENTRY org.eclipse.equinox.security 1 0 2016-08-11 21:40:11.776
+!MESSAGE New keyring password generated. 
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-08-11 21:40:18.829
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\disha.bhagchandani'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:00:51.725
+!MESSAGE  WARN [2016-08-11 22:00:51,723] (ComponentController.java:deploy:447) - Remote save aborted - project is not online enabled
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:00:52.634
+!MESSAGE  WARN [2016-08-11 22:00:52,634] (Utils.java:loadDocument:800) - Unable to load document: C:\Users\disha.bhagchandani\workspace\.metadata\.plugins\org.eclipse.core.resources\.projects\new project\com.salesforce.ide.core\packageCache.xml (The system cannot find the file specified)
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:00:52.650
+!MESSAGE  WARN [2016-08-11 22:00:52,650] (ComponentController.java:run:425) - Unable to update cache with new component Custom Object - cache is not found
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:00:52.869
+!MESSAGE  WARN [2016-08-11 22:00:52,869] (DefaultBuilder.java:applyDirtyMarkers:93) - TODO: apply 'Save locally only...' markers on each resource
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:01:52.971
+!MESSAGE  WARN [2016-08-11 22:01:52,969] (ComponentController.java:deploy:447) - Remote save aborted - project is not online enabled
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:01:52.990
+!MESSAGE  WARN [2016-08-11 22:01:52,985] (Utils.java:loadDocument:800) - Unable to load document: C:\Users\disha.bhagchandani\workspace\.metadata\.plugins\org.eclipse.core.resources\.projects\new project\com.salesforce.ide.core\packageCache.xml (The system cannot find the file specified)
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:01:52.995
+!MESSAGE  WARN [2016-08-11 22:01:52,994] (ComponentController.java:run:425) - Unable to update cache with new component Custom Object - cache is not found
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:01:53.163
+!MESSAGE  WARN [2016-08-11 22:01:53,147] (DefaultBuilder.java:applyDirtyMarkers:93) - TODO: apply 'Save locally only...' markers on each resource
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:53:29.539
+!MESSAGE  WARN [2016-08-11 22:53:29,539] (ComponentFactory.java:getCompositeComponentFromComponent:1098) - Unable to load existing 'pages/SecondVFPage.page-meta.xml' from project - associated component's file resource is null.  Assuming new.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:53:29.852
+!MESSAGE  WARN [2016-08-11 22:53:29,852] (ComponentController.java:deploy:447) - Remote save aborted - project is not online enabled
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:53:29.867
+!MESSAGE  WARN [2016-08-11 22:53:29,867] (Utils.java:loadDocument:800) - Unable to load document: C:\Users\disha.bhagchandani\workspace\.metadata\.plugins\org.eclipse.core.resources\.projects\new project\com.salesforce.ide.core\packageCache.xml (The system cannot find the file specified)
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:53:29.867
+!MESSAGE  WARN [2016-08-11 22:53:29,867] (ComponentController.java:run:425) - Unable to update cache with new component Visualforce Page - cache is not found
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:53:30.055
+!MESSAGE  WARN [2016-08-11 22:53:30,055] (DefaultBuilder.java:applyDirtyMarkers:93) - TODO: apply 'Save locally only...' markers on each resource
+
+
+!ENTRY com.salesforce.ide.core 2 0 2016-08-11 22:53:48.005
+!MESSAGE  WARN [2016-08-11 22:53:48,005] (DefaultBuilder.java:applyDirtyMarkers:93) - TODO: apply 'Save locally only...' markers on each resource
+
+
+!ENTRY com.salesforce.ide.core 4 0 2016-08-11 22:55:49.075
+!MESSAGE ERROR [2016-08-11 22:55:49,075] (ProjectPackageList.java:generateComponents:483) - Filepath-zip mapping is null or empty for package 'unpackaged' [null] - skipping component generation
+
+
+!ENTRY org.eclipse.egit.core 4 0 2016-08-11 23:20:58.832
+!MESSAGE An exception occurred during push on URI https://github.com/disha-bhagchandani/FirstRepository.git: https://github.com/disha-bhagchandani/FirstRepository.git: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/disha-bhagchandani/FirstRepository.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:479)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:398)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1173)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:190)
+	at org.eclipse.egit.ui.internal.push.ConfirmationPage$2.run(ConfirmationPage.java:206)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+!ENTRY org.eclipse.egit.core 4 0 2016-08-11 23:22:53.343
+!MESSAGE An exception occurred during push on URI https://github.com/disha-bhagchandani/FirstRepository.git: https://github.com/disha-bhagchandani/FirstRepository.git: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/disha-bhagchandani/FirstRepository.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:479)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:398)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1173)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:190)
+	at org.eclipse.egit.ui.internal.push.ConfirmationPage$2.run(ConfirmationPage.java:206)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+!ENTRY org.eclipse.egit.core 4 0 2016-08-11 23:27:11.680
+!MESSAGE An exception occurred during push on URI https://github.com/disha-bhagchandani/FirstRepository.git: https://github.com/disha-bhagchandani/FirstRepository.git: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/disha-bhagchandani/FirstRepository.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:479)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:398)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1173)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:190)
+	at org.eclipse.egit.ui.internal.push.PushWizard$PushJob.run(PushWizard.java:298)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.egit.ui 4 0 2016-08-11 23:27:12.180
+!MESSAGE Can't connect to any repository: https://github.com/disha-bhagchandani/FirstRepository.git (https://github.com/disha-bhagchandani/FirstRepository.git: not authorized)
+
+!ENTRY org.eclipse.egit.ui 4 0 2016-08-11 23:29:51.216
+!MESSAGE Error parsing commits from push result
+!STACK 0
+org.eclipse.jgit.errors.MissingObjectException: Missing unknown 5edbc13468589acd8d494edad3c362454003d171
+	at org.eclipse.jgit.internal.storage.file.WindowCursor.open(WindowCursor.java:148)
+	at org.eclipse.jgit.lib.ObjectReader.open(ObjectReader.java:229)
+	at org.eclipse.jgit.revwalk.RevWalk.parseAny(RevWalk.java:809)
+	at org.eclipse.jgit.revwalk.RevWalk.parseCommit(RevWalk.java:722)
+	at org.eclipse.egit.ui.internal.push.RefUpdateElement.getCommits(RefUpdateElement.java:172)
+	at org.eclipse.egit.ui.internal.push.RefUpdateElement.getChildren(RefUpdateElement.java:192)
+	at org.eclipse.egit.ui.internal.push.RefUpdateElement.getStyledText(RefUpdateElement.java:264)
+	at org.eclipse.egit.ui.internal.push.PushResultTable$3.getStyledText(PushResultTable.java:114)
+	at org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.getStyledText(DelegatingStyledCellLabelProvider.java:195)
+	at org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.update(DelegatingStyledCellLabelProvider.java:103)
+	at org.eclipse.jface.viewers.ViewerColumn.refresh(ViewerColumn.java:152)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.doUpdateItem(AbstractTreeViewer.java:953)
+	at org.eclipse.jface.viewers.AbstractTreeViewer$UpdateItemSafeRunnable.run(AbstractTreeViewer.java:113)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.doUpdateItem(AbstractTreeViewer.java:1033)
+	at org.eclipse.jface.viewers.StructuredViewer$UpdateItemSafeRunnable.run(StructuredViewer.java:485)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.updateItem(StructuredViewer.java:2167)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createTreeItem(AbstractTreeViewer.java:848)
+	at org.eclipse.jface.viewers.AbstractTreeViewer$1.run(AbstractTreeViewer.java:823)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createChildren(AbstractTreeViewer.java:797)
+	at org.eclipse.jface.viewers.TreeViewer.createChildren(TreeViewer.java:644)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createChildren(AbstractTreeViewer.java:768)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.internalInitializeTree(AbstractTreeViewer.java:1548)
+	at org.eclipse.jface.viewers.TreeViewer.internalInitializeTree(TreeViewer.java:833)
+	at org.eclipse.jface.viewers.AbstractTreeViewer$5.run(AbstractTreeViewer.java:1532)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1443)
+	at org.eclipse.jface.viewers.TreeViewer.preservingSelection(TreeViewer.java:403)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1404)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.inputChanged(AbstractTreeViewer.java:1525)
+	at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:280)
+	at org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1690)
+	at org.eclipse.egit.ui.internal.push.PushResultTable.setData(PushResultTable.java:293)
+	at org.eclipse.egit.ui.internal.push.PushResultDialog.createDialogArea(PushResultDialog.java:114)
+	at org.eclipse.jface.dialogs.TitleAreaDialog.createContents(TitleAreaDialog.java:158)
+	at org.eclipse.jface.window.Window.create(Window.java:432)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1104)
+	at org.eclipse.jface.window.Window.open(Window.java:791)
+	at org.eclipse.egit.ui.internal.push.PushWizard$PushJob$1.run(PushWizard.java:320)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:140)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:611)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
