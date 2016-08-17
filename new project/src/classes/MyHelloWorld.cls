@@ -6,6 +6,7 @@ public class MyHelloWorld {
 
          b.Price__c *= 0.9;
          system.debug('The Price of book is');
+          system.debug('New branch changes');
 
       }
 
