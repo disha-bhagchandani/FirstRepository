@@ -1,0 +1,7 @@
+Hi SIr/Ma'am,
+
+The code review {!Code_Review__c.Name__c} is completed.
+Please go through the comments and do the needful, for more help please contact  {!Code_Review__c.Reviewed_By__c}.
+
+Thanks!
+ {!Code_Review__c.Reviewed_By__c}

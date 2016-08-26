@@ -1,0 +1,15 @@
+ExecuteAnonymousApex_code=Fine
+eclipse.preferences.version=1
+endpointApiVersion=36.0
+endpointEnvironment=Production/Developer Edition
+endpointServer=login.salesforce.com
+httpsProtocol=true
+ideVersion=36.0
+keependpoint=false
+metadataFormatVersion=36.0
+namespacePrefix=
+packageName=unpackaged
+preferToolingDeployment=true
+projectIdentifier=IDE-7098162242120563148
+readTimeout=600
+username=disha.bhagchandani@eternussolutions.com

@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EMPLOYEE</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EMPLOYEE</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Age --></label>
+        <name>Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual CTC --></label>
+        <name>Annual_CTC__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+        <picklistValues>
+            <masterLabel>Bhopal</masterLabel>
+            <translation><!-- Bhopal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gandhi Nagar</masterLabel>
+            <translation><!-- Gandhi Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guntur</masterLabel>
+            <translation><!-- Guntur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hyderabad</masterLabel>
+            <translation><!-- Hyderabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mumbai</masterLabel>
+            <translation><!-- Mumbai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune</masterLabel>
+            <translation><!-- Pune --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surat</masterLabel>
+            <translation><!-- Surat --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Employee --></label>
+        <name>Current_Employee__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEPARTMENT --></label>
+        <name>DEPARTMENT__c</name>
+        <relationshipLabel><!-- EMPLOYEE --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Of Birth --></label>
+        <name>Date_Of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Of Joining --></label>
+        <name>Date_Of_Joining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Designation --></label>
+        <name>Designation__c</name>
+        <picklistValues>
+            <masterLabel>Ceo</masterLabel>
+            <translation><!-- Ceo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Developer</masterLabel>
+            <translation><!-- Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project  Manager</masterLabel>
+            <translation><!-- Project  Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution Architect</masterLabel>
+            <translation><!-- Solution Architect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sr. Developer</masterLabel>
+            <translation><!-- Sr. Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Lead</masterLabel>
+            <translation><!-- Technical Lead --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Education --></label>
+        <name>Education__c</name>
+        <picklistValues>
+            <masterLabel>B Sc.</masterLabel>
+            <translation><!-- B Sc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B Tech.</masterLabel>
+            <translation><!-- B Tech. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCA</masterLabel>
+            <translation><!-- BCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BE</masterLabel>
+            <translation><!-- BE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCA</masterLabel>
+            <translation><!-- MCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ME</masterLabel>
+            <translation><!-- ME --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Employee ID --></label>
+        <name>Employee_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Name --></label>
+        <name>Full_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>Is_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is On Notice Period --></label>
+        <name>Is_On_Notice_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Working Day --></label>
+        <name>Last_Working_Day__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager Email --></label>
+        <name>Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager --></label>
+        <name>Manager__c</name>
+        <relationshipLabel><!-- EMPLOYEE&amp;MANAGER --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Resignation Date --></label>
+        <name>Resignation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSN --></label>
+        <name>SSN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salary Credited Till Date --></label>
+        <name>Salary_Credited_Till_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skills --></label>
+        <name>Skill__c</name>
+        <picklistValues>
+            <masterLabel>Apex</masterLabel>
+            <translation><!-- Apex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C#</masterLabel>
+            <translation><!-- C# --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dot Net</masterLabel>
+            <translation><!-- Dot Net --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Force.com</masterLabel>
+            <translation><!-- Force.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Java</masterLabel>
+            <translation><!-- Java --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operations</masterLabel>
+            <translation><!-- Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHP</masterLabel>
+            <translation><!-- PHP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Management</masterLabel>
+            <translation><!-- Project Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Planning</masterLabel>
+            <translation><!-- Project Planning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA</masterLabel>
+            <translation><!-- QA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce</masterLabel>
+            <translation><!-- Salesforce --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>AP</masterLabel>
+            <translation><!-- AP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gujarat</masterLabel>
+            <translation><!-- Gujarat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP</masterLabel>
+            <translation><!-- MP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maharashtra</masterLabel>
+            <translation><!-- Maharashtra --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Teacher --></label>
+        <name>Teacher__c</name>
+        <picklistValues>
+            <masterLabel>Jigar</masterLabel>
+            <translation><!-- Jigar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kaveeta</masterLabel>
+            <translation><!-- Kaveeta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kunal</masterLabel>
+            <translation><!-- Kunal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pooja</masterLabel>
+            <translation><!-- Pooja --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sid</masterLabel>
+            <translation><!-- Sid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twinkle</masterLabel>
+            <translation><!-- Twinkle --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Zip --></label>
+        <name>Zip__c</name>
+    </fields>
+    <layouts>
+        <layout>EMPLOYEE Layout</layout>
+        <sections>
+            <label><!-- Address Details --></label>
+            <section>Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Department Details --></label>
+            <section>Department Details</section>
+        </sections>
+        <sections>
+            <label><!-- Employee Details --></label>
+            <section>Employee Details</section>
+        </sections>
+        <sections>
+            <label><!-- Salary Details --></label>
+            <section>Salary Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Non-Technical Page Layout</layout>
+        <sections>
+            <label><!-- Address Details --></label>
+            <section>Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Department Details --></label>
+            <section>Department Details</section>
+        </sections>
+        <sections>
+            <label><!-- Employee Details --></label>
+            <section>Employee Details</section>
+        </sections>
+        <sections>
+            <label><!-- Non Technical --></label>
+            <section>Non Technical</section>
+        </sections>
+        <sections>
+            <label><!-- Salary Details --></label>
+            <section>Salary Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Technical EMPLOYEE Layout</layout>
+        <sections>
+            <label><!-- Address Details --></label>
+            <section>Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Department Details --></label>
+            <section>Department Details</section>
+        </sections>
+        <sections>
+            <label><!-- Employee Details --></label>
+            <section>Employee Details</section>
+        </sections>
+        <sections>
+            <label><!-- Salary Details --></label>
+            <section>Salary Details</section>
+        </sections>
+        <sections>
+            <label><!-- Technical --></label>
+            <section>Technical</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Non-Technical --></label>
+        <name>Non_Technical</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Technical --></label>
+        <name>Technical</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Age is not between  21-30 --></errorMessage>
+        <name>Age</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Not on Notice Period --></errorMessage>
+        <name>If_Notice_Peroid_True_Enter_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Last working date cannot be greater than joining date --></errorMessage>
+        <name>Last_working_date_cannot_be_greater_than</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide a valid Date of birth. Employee cannot be less than 18 years of Age --></errorMessage>
+        <name>above_18_years</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Size is greater than 10 --></errorMessage>
+        <name>limit_size_to_10</name>
+    </validationRules>
+</CustomObjectTranslation>

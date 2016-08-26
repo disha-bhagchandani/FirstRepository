@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This custom setting holds the values for status dropdown of popup panel of comment review.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Label__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field has the values for different status options.</inlineHelpText>
+        <label>Label</label>
+        <length>30</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>ReviewComment_PopupStatusOption</label>
+    <visibility>Public</visibility>
+</CustomObject>

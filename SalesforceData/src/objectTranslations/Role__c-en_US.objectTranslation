@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Role</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Roles</value>
+    </caseValues>
+    <fields>
+        <label><!-- Employee Role --></label>
+        <name>Employee_Role__c</name>
+        <picklistValues>
+            <masterLabel>Developer</masterLabel>
+            <translation><!-- Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project  Manager</masterLabel>
+            <translation><!-- Project  Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution Architect</masterLabel>
+            <translation><!-- Solution Architect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sr. Developer</masterLabel>
+            <translation><!-- Sr. Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Lead</masterLabel>
+            <translation><!-- Technical Lead --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Description --></label>
+        <name>Role_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role_EMPLOYEE --></label>
+        <name>Role_EMPLOYEE__c</name>
+        <relationshipLabel><!-- Roles --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

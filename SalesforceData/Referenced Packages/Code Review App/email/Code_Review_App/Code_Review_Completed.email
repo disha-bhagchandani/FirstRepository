@@ -1,0 +1,11 @@
+<messaging:emailTemplate subject="Code review {!relatedTo.Name}  is completed." relatedToType="CR_App__Code_Review__c">
+<messaging:htmlEmailBody >
+<p>Dear Assignee</p>
+
+<p>The code review {!relatedTo.Name} is completed by {!relatedTo.CR_App__Reviewed_By__c} and requires your attention.
+Please go through the comments assigned to you and resolve them as soon as possible.
+In case of any discrepencies,please contact {!relatedTo.CR_App__Reviewed_By__c}.</p>
+<br/><p>Regards<br/>
+ Eternus Code Review Team</p> 
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

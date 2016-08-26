@@ -1,0 +1,7 @@
+<apex:page standardController="CR_App__Code_Review__c"  
+    extensions="CR_App.AddCodeReviewExtension" 
+    docType="html-5.0" 
+    action="{!createNewCodeReview}"
+>
+
+</apex:page>

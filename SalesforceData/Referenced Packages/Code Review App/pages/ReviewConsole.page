@@ -1,0 +1,1035 @@
+<apex:page controller="CR_App.ReviewConsoleController" docType="html-5.0"
+            showHeader="true" sidebar="false" standardStylesheets="false">
+    <apex:stylesheet value="{!URLFOR($Resource.CR_App__Code_Review_Css,'Code_Review_Css/ReviewConsoleStyle.css')}"/>
+    <title>Review Console</title>
+    <!--     Css for autosuggest result -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"></link>
+    <script type="text/javascript">
+        function Pager(tableName, itemsPerPage) {
+            this.tableName = tableName;
+            this.itemsPerPage = itemsPerPage;
+            this.currentPage = 1;
+            this.pages = 0;
+            this.inited = false;
+            this.showRecords = function(from, to) {
+                var rows = document.getElementById(tableName).rows;
+                // i starts from 1 to skip table header row
+                for (var i = 1; i < rows.length; i++) {
+                    if (i < from || i > to)
+                        rows[i].style.display = 'none';
+                    else
+                        rows[i].style.display = '';
+                }//end for
+            }// end show records
+            this.showPage = function(pageNumber,pagediv) {
+                if (! this.inited) {
+                    alert("not inited");
+                    return;
+                }
+                var oldPageAnchor = document.getElementById('pg'+this.currentPage);
+                oldPageAnchor = $('#'+pagediv).find('#pg'+ this.currentPage);
+                oldPageAnchor.className = 'pg-normal';
+                this.currentPage = pageNumber;
+                var newPageAnchor = document.getElementById('pg'+this.currentPage);
+                newPageAnchor = $('#'+pagediv).find('#pg'+ this.currentPage);
+                newPageAnchor.className = 'pg-selected';
+                var from = (pageNumber - 1) * itemsPerPage + 1;
+                var to = from + itemsPerPage - 1;
+                this.showRecords(from, to);
+            }
+
+            this.prev = function() {
+                if (this.currentPage > 1)
+                this.showPage(this.currentPage - 1);
+            }
+
+            this.next = function() {
+                if (this.currentPage < this.pages) {
+                    this.showPage(this.currentPage + 1);
+                }
+            }
+
+            this.init = function() {
+                var rows = document.getElementById(tableName).rows;
+                var records = (rows.length - 1);
+                this.pages = Math.ceil(records / itemsPerPage);
+                this.inited = true;
+            }
+            this.showPageNav = function(pagerName, positionId) {
+                if (! this.inited) {
+                    alert("not inited");
+                    return;
+                }
+                if (positionId == 'pageNavPosition'){
+                    revieweeMax = this.pages;
+                } else  if (positionId == 'pageNavPositionAssignedTO') {
+                    assigneeMax =this.pages;
+                }
+                var element = document.getElementById(positionId);
+                var pagerHtml = '<span onclick="' + pagerName + '.prev();" class="pg-normal"> « Prev </span> ';
+                for (var page = 1; page <= this.pages; page++)
+                    pagerHtml += '<span id="pg' + page + '" class="pg-normal" onclick="' + 
+                                 pagerName + '.showPage(' + page + ');">' + page + '</span> ';
+                pagerHtml += '<span onclick="'+pagerName+'.next();" class="pg-normal"> Next »</span>';
+                element.innerHTML = pagerHtml;
+        }
+    }
+    </script>
+    <apex:form >
+        <apex:actionFunction name="setReviewerTable" action="{!fetchReviewsReviewedBy}" reRender="reviewedByList,assignedToList"/>
+        <apex:actionFunction name="setAssigneeTable" action="{!fetchReviewsAssignedTo}" reRender="assignedToList,reviewedByList"/>
+        <div id="pageContent">
+            <table width="100%">
+            <tr>
+            <td id="selectUserColumn" width="10%">
+            <div id="selectControlDiv">
+                <div class="menuDiv">
+                    <nav class="navmenu">
+                        <ul class="nav userControl">
+                            <li>
+                                <input type="button" value="Assigned to me" id="assigneeControl" 
+                                    class="userType"></input>
+                            </li>
+                            <li>
+                                <input type="button" value="Reviewed by me" id="reviewerControl" 
+                                class="userType"></input>
+                            </li>
+                            <li>
+                                <input type="button" value="Coding Standards" id="codingStandardControls" 
+                                class="userType"></input>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            </td>
+            <td width="90%">
+            <div id="reviewContent">
+                <div id="titleDiv">
+                    <h1 id="pageTitle">{!$Label.ReviewConsole_PageTitle}</h1>
+                    <span id="reviewTitle"></span>
+                </div>
+                <div id="barChartPanel" class="chartPanel">
+                    <table style="width: 100%">
+                        <tr>
+                        <td style="td">
+                            <div id="barChartReviewCount" class="chartDiv"></div>
+                        </td>
+                        <td style="td">
+                            <div id="barChartIssueCount" class="chartDiv"></div>
+                        </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="pieChartPanel" class="chartPanel">
+                        <div id="piechartSeverity" class="pieDiv"></div>
+                        <div id="piechartStatus" class="pieDiv"></div>
+                </div>
+
+        <!--         Reviewer Table -->
+                <div id="reviewDiv" class="recordsDiv">
+                    <apex:outputPanel id="reviewedByList">
+                        <table id="reviewListTableId" class="reviewListTable" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th colspan="1">{!$Label.ReviewerTable_Header_Action}</th>
+                                    <th colspan="1" data-sortorder="-1">{!$Label.ReviewerTable_Header_ReviewName} <image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /></th>
+                                    <th colspan="1" data-sortorder="-1">{!$Label.TotalIssuesHeader}<image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /> </th>
+                                    <th colspan="1" data-sortorder="-1">{!$Label.OpenIssues}<image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /> </th>
+                                    <th colspan="1" data-sortorder="-1">{!$Label.ResolvedIssuesHeader}<image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /> </th>
+                                    <th colspan="1" data-sortorder="-1">{!$Label.ClosedIssues_Header}<image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /> </th>
+                                    <th colspan="1" data-sortorder="-1">{!$Label.ReviewerTable_Header_StartDate} <image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /> </th>
+                                    <th colspan="1" data-sortorder="-1">{!$Label.ReviewerTable_Header_CompleteDate} <br/> {!$Label.Header_DateFormat} <image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /> </th>
+                                    <th colspan="1" data-sortorder="-1" class="dateHeader">{!$Label.ReviewerTable_Header_Assignee} <image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <apex:repeat value="{!reviewsReviewedBy}" var="review">
+                                <tr>
+                                    <td class="center actionCell">
+                                        <a href="#" onclick="showComments('{!review.Id}');">
+                                            <img src="/img/icon/custom51_100/pencil16.png"/>
+                                        </a>
+                                    </td>
+                                    <td class="reviewCell">
+                                        <a href="#" onclick="showComments('{!review.Id}');">
+                                            {!review.Name}
+                                        </a>
+                                    </td>
+                                    <td class="center totalCell">
+                                        {!review.CR_App__Total_Issue__c}
+                                    </td>
+                                    <td class="center openCell">
+                                        {!review.CR_App__Open_Issue__c}
+                                    </td>
+                                    <td class="center resolvedCell">
+                                        {!review.CR_App__Resolved_Issue__c}
+                                    </td>
+                                    <td class="center closedCell">
+                                        {!review.CR_App__Closed_Issue__c}
+                                    </td>
+                                    <td class="center dateCell">
+                                        <apex:outputText value="{0, date, MM/d/yyyy }">
+                                            <apex:param value="{!review.CreatedDate}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="center dateCell">
+                                        <apex:outputText value="{0, date, MM/d/yyyy }">
+                                            <apex:param value="{!review.CR_App__Review_Completion_Date__c}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="assignedCell">
+                                        {!review.CR_App__Assigned_to__c}
+                                    </td>
+                                </tr>
+                                </apex:repeat>
+                            </tbody>
+                        </table>
+                        <div id="pageNavPosition" style="padding-top: 20px" align="right">
+                        </div>
+                        <script type="text/javascript">
+                        var revieweeMax=1;
+                        var pager1 = new Pager('reviewListTableId', 10);
+                        pager1.init();
+                        pager1.showPageNav('pager1', 'pageNavPosition');
+                        pager1.showPage(1,'pageNavPosition');
+                        var revieweeFlag=1;
+                        $('#pageNavPosition #pg'+revieweeFlag).removeClass('pg-normal').addClass('pg-selected'); 
+                        $('#pageNavPosition').find('.pg-normal').click(function(event) {
+                            var element=event.target; 
+                            $('#pageNavPosition .pg-selected').each(function(){ 
+                                this.className ='pg-normal';              
+                            }); 
+                            if(this.textContent.indexOf("Prev")>-1){ 
+                                if (Number(revieweeFlag)<=1){
+                                    revieweeFlag=1;
+                                }else{
+                                    revieweeFlag=Number(revieweeFlag)-1;
+                                }
+                            } else if(this.textContent.indexOf("Next")>-1) {
+                                if (Number(revieweeFlag)>=revieweeMax){
+                                    revieweeFlag=revieweeMax;
+                                }else{
+                                    revieweeFlag=Number(revieweeFlag)+1;
+                                } 
+                            } else{
+                                revieweeFlag =Number(this.textContent);
+                            }
+                            $('#pageNavPosition #pg'+revieweeFlag).removeClass('pg-normal').addClass('pg-selected');
+                        });
+                        $('#reviewListTableId th').click(function(event) {
+                            var element = $(this);
+                            var headerIndex = getHeaderIndex('reviewListTableId', element.text());
+                            var sortorder = parseInt(element.data('sortorder'));
+                            // If sortorder is 0, change it to 1
+                            sortorder = sortorder === 0 ? 1 : sortorder;
+                            sortTable('reviewListTableId', headerIndex, sortorder);
+                            $('#reviewListTable > th').data('sortorder', 1);
+                            element.data('sortorder', sortorder*-1);
+                        });
+                    </script>
+                </apex:outputPanel>
+                </div>
+
+            <!-- Assignee Table -->
+            <div id="assigneeDiv" class="recordsDiv">
+                <apex:outputPanel id="assignedToList">
+                    <table id="assignedToListTable" class="reviewListTable" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th colspan="1">{!$Label.AssigneeTable_Header_Action}</th>
+                                <th colspan="1" data-sortorder="-1">{!$Label.AssigneeTable_Header_ReviewName} <apex:image url="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" styleClass="iconimages" /></th>
+                                <th colspan="1" data-sortorder="-1">{!$Label.cr_app__TotalIssuesHeader}<apex:image url="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" styleClass="iconimages"/> </th>
+                                <th colspan="1" data-sortorder="-1">{!$Label.cr_app__OpenIssues}<apex:image url="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" styleClass="iconimages"/> </th>
+                                <th colspan="1" data-sortorder="-1">{!$Label.cr_app__ResolvedIssuesHeader}<apex:image url="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" styleClass="iconimages"/> </th>
+                                <th colspan="1" data-sortorder="-1">{!$Label.ClosedIssues_Header}<image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /> </th>
+                                <th colspan="1" data-sortorder="-1">{!$Label.AssigneeTable_Header_ReviewerName} <apex:image url="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" styleClass="iconimages" /></th>
+                                <th colspan="1" data-sortorder="-1" class="dateHeader">{!$Label.AssigneeTable_Header_AssignDate} <br/> {!$Label.Header_DateFormat}<apex:image url="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" styleClass="iconimages" /></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <apex:repeat value="{!reviewsAssignedTo}" var="review">
+                                <tr>
+                                    <td class="actionCell center">
+                                        <a href="#" onclick="showComments('{!review.Id}');">
+                                            <img src="/img/icon/custom51_100/pencil16.png"/>
+                                        </a>
+                                    </td>
+                                    <td class="reviewCell">
+                                        <a href="#" onclick="showComments('{!review.Id}');">
+                                            {!review.Name}
+                                        </a>
+                                    </td>
+                                    <td class="center totalCell">
+                                        {!review.CR_App__Total_Issue__c}
+                                    </td>
+                                    <td class="center openCell">
+                                        {!review.CR_App__Open_Issue__c}
+                                    </td>
+                                    <td class="center resolvedCell">
+                                        {!review.CR_App__Resolved_Issue__c}
+                                    </td>
+                                    <td class="center closedCell">
+                                        {!review.CR_App__Closed_Issue__c}
+                                    </td>
+                                    <td class="reviewedCell">
+                                        {!review.CR_App__Reviewed_By__c}
+                                    </td>
+                                    <td class="center dateCell">
+                                        <apex:outputText value="{0, date, MM/d/yyyy }">
+                                            <apex:param value="{!review.CR_App__Review_Completion_Date__c}"/>
+                                        </apex:outputText>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                    <div id="pageNavPositionAssignedTO" style="padding-top: 20px" align="right">
+                    </div>
+                    <script type="text/javascript">
+                        var assigneeMax=1;
+                        var pager = new Pager('assignedToListTable', 10);
+                        pager.init();
+                        pager.showPageNav('pager', 'pageNavPositionAssignedTO');
+                        pager.showPage(1,'pageNavPositionAssignedTO');
+                        var assigneeFlag=1;
+                        $('#pageNavPositionAssignedTO #pg'+assigneeFlag).removeClass('pg-normal').addClass('pg-selected'); 
+                        $('#pageNavPositionAssignedTO').find('.pg-normal').click(function(event) {
+                            var element=event.target; 
+                            $('#pageNavPositionAssignedTO .pg-selected').each(function(){ 
+                                this.className ='pg-normal';
+                            }); 
+                            if(this.textContent.indexOf("Prev")>-1){ 
+                                if (Number(assigneeFlag)<=1){
+                                    assigneeFlag=1;
+                                }else{
+                                    assigneeFlag=Number(assigneeFlag)-1;
+                                }
+                            } else if(this.textContent.indexOf("Next")>-1) {
+                                if (Number(assigneeFlag)>=assigneeMax){
+                                    assigneeFlag=assigneeMax;
+                                }else{
+                                    assigneeFlag=Number(assigneeFlag)+1;
+                                } 
+                            } else{
+                                assigneeFlag =Number(this.textContent);
+                            }
+                            $('#pageNavPositionAssignedTO #pg'+assigneeFlag).removeClass('pg-normal').addClass('pg-selected');
+                        });
+                        $('#assignedToListTable th').click(function(event) {
+                            var element = $(this);
+                            var headerIndex = getHeaderIndex('assignedToListTable', element.text());
+                            var sortorder = parseInt(element.data('sortorder'));
+                            // If sortorder is 0, change it to 1
+                            sortorder = sortorder === 0 ? 1 : sortorder;
+                            sortTable('assignedToListTable', headerIndex, sortorder);
+                            $('#assignedToListTable > th').data('sortorder', 1);
+                            element.data('sortorder', sortorder*-1);
+                        });
+                    </script>
+                </apex:outputPanel>
+            </div>
+            <div class="updateReviewDiv">
+                <input type="button" value="Reset View" id="resetList" class="reviewControlButton" ></input>
+                <input type="button" value="Update" id="updateReviewbutton" class="reviewControlButton"></input>
+                <input type="button" value="Update And Back" id="updateClosebutton" class="reviewControlButton"></input>
+                <input type="button" value="Back" id="closeReviewButton" class="reviewControlButton"></input>
+            </div>
+            <div id="updateMessage">
+                <apex:pageMessage summary="{!$Label.cr_app__ReviewConsole_Update_SuccessMessage}" severity="info" strength="3"/>
+            </div>
+            <div id="updateErrorMessage">
+                <apex:pageMessage summary="{!$Label.cr_app__ReviewConsole_Update_ErrorMessage}" severity="error" strength="3"/>
+            </div>
+            <div id="commentsTableDiv"> </div>
+        </div>
+        </td>
+        </tr>
+        </table> 
+    </div>  
+</apex:form>
+
+    <apex:includescript value="//code.jquery.com/jquery-1.11.1.min.js" />
+    <apex:includescript value="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" />
+    <apex:includescript value="https://www.gstatic.com/charts/loader.js"/>
+    <!--     Library for autocomplete UI -->
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#commentsTableDiv').hide();
+            $('.updateReviewDiv').hide();
+            $("#reviewDiv").hide();
+            $("#assigneeDiv").hide();
+            $(".userTitle").hide();
+            statusOptions = '{!statusOptionLabelList}'.split(',');
+            $("#updateMessage").hide();
+            $("#updateErrorMessage").hide();
+            $("#assigneeControl").click();
+            
+        });
+
+        $("#codingStandardControls").click(function(event) {
+                var win = window.open("{!$Label.CodingStandardDoc}", '_blank');
+                win.focus();
+        });
+
+        function showComponents() {
+            $('#commentsTableDiv').hide();
+            $('.updateReviewDiv').hide();
+        }
+        /*
+        * To display the table as the status is selected in pie chart
+        */
+        function displayRowByStatus(val) {
+            $('#commentsTable tr').each(function() {
+                $(this).show();
+            });
+            var value;
+            if(val == 'Open Issues') {
+                value = 'Open';
+            }
+            if(val == 'Resolved Issues') {
+                value = 'Resolved';
+            }
+            if(val == 'Discussion Required Issues') {
+                value = 'Discussion Required';
+            }
+            if(val == 'Closed Issues') {
+                    value = 'Closed';
+            }
+            var counter = 1 ;
+            $('#commentsTable tr').each(function() {
+                if(value == 'Closed' && userSelected == 2) {
+                    if($(this).find(".statusData").val() != value && counter > 1) {
+                        $(this).hide();
+                    }
+                    if($(this).find(".statusData").length == 0) {
+                        $(this).show();
+                    }
+                }
+                else {
+                    if($(this).find(".data-input").val() != value && counter > 1) {
+                        $(this).hide();
+                    }
+                   
+                }
+                counter++;
+            });
+        }
+        /*
+        * To display the table as the severity is selected in pie chart
+        */
+            function displayRowBySeverity(val) {
+            $('#commentsTable tr').each(function() {
+                $(this).show();
+            });
+            var value;
+              if(val == 'High Severity Issues') {
+                value = 'High'
+            }
+            if(val == 'Low Severity Issues') {
+                value = 'Low'
+            }
+            if(val == 'Medium Severity Issues') {
+                value = 'Medium'
+            }
+            if(val == 'Blocker Issues') {
+                value = 'Blocker'
+            }
+            var counter = 1 ;
+            $('#commentsTable tr').each(function() {
+                if($(this).find(".severity").text() != value && counter > 1) {
+                        $(this).hide();
+                    }
+                    counter++;
+            });
+        }
+
+        /*
+        *Function called on click of "Reviewed By Me" button.
+        */
+        $("#reviewerControl").click(function() {
+            $("#reviewTitle").text('');
+            $('#commentsTableDiv').hide();
+            $('.updateReviewDiv').hide();
+            userSelected = 1;
+            statusOptions = '{!statusOptionLabelList}'.split(',');
+            $("#barChartPanel").show();
+            $("#pieChartPanel").hide();
+            sortDataWeekReviewedBy();
+            drawingcharts();
+            $("#reviewDiv").show();
+            $("#assigneeDiv").hide();
+            $("#reviewerTitle").show();
+            $("#assigneeTitle").hide();
+            $("#updateMessage").hide();
+            $("#updateErrorMessage").hide();
+            $("#reviewerControl").addClass('selection');
+            $("#assigneeControl").removeClass('selection');
+        });
+
+        /*
+        *Function called on click of "Reviewed By Me" button.
+        */
+        $("#assigneeControl").click(function() {
+            $("#reviewTitle").text('');
+            $('#commentsTableDiv').hide();
+            $('.updateReviewDiv').hide();
+            userSelected = 2;
+            statusOptions = '{!statusOptionLabelList}'.split(',');
+            statusOptions.splice(statusOptions.indexOf("Closed"),1);
+            $("#barChartPanel").show();
+            $("#pieChartPanel").hide();
+            $("#reviewDiv").hide();
+            $("#assigneeControl").addClass('selection');
+            $("#reviewerControl").removeClass('selection');
+            $("#assigneeDiv").show();
+            sortDataWeekAssignedTo();
+            drawingcharts();
+            $("#assignedToListTable").show();
+            $("#reviewerTitle").hide();
+            $("#assigneeTitle").show();
+            $("#updateMessage").hide();
+            $("#updateErrorMessage").hide();
+            
+            
+        });
+
+        /**
+        *Function called to fetch the review comments of selected code review.
+        */
+        function showComments(review) {
+            reviewId = review;
+            showReviewName();
+            CR_App.ReviewConsoleController.fetchReviewComments(
+                reviewId,
+                function(result, event) {
+                    commentResults = result;
+                    $("#reviewDiv").hide();
+                    $("#assigneeDiv").hide();
+                    $("#barChartPanel").hide();
+                    $("#pieChartPanel").show();
+                    $('#commentsTableDiv').show();
+                    addReviewCommentsToTable(result,statusOptions);
+                    $('.updateReviewDiv').show();
+                    countIssues();
+                    drawingPieCharts();
+                    $('#commentsTable th').click(function(event) {
+                        var element = $(this);
+                        var headerIndex = getHeaderIndex('commentsTable', element.text());
+                        var sortorder = parseInt(element.data('sortorder'));
+                        // If sortorder is 0, change it to 1
+                        sortorder = sortorder === 0 ? 1 : sortorder;
+                        sortTable('commentsTable', headerIndex, sortorder);
+                        $('#commentsTable > th').data('sortorder', 1);
+                        element.data('sortorder', sortorder*-1);
+                    });
+                }
+            );
+        }
+
+        /**
+         *Function to display the name of code review in title.
+         */
+        function showReviewName() {
+            CR_App.ReviewConsoleController.getReviewName(
+            reviewId,
+            function(result,event) {
+                $("#reviewTitle").text(result);
+                $(".userTitle").hide();
+            }
+            );
+        }
+
+        /**
+        *Function uses a template and the comments from attachment to display review table.
+        */
+        function addReviewCommentsToTable(comments,options) {
+            var template = commentsTableTemplate.innerHTML;
+            var templateExecutor = _.template(template);
+            commentsTableDiv.innerHTML = templateExecutor({comments:comments,options:options,userSelected:userSelected});
+            checkInputChange();
+            $("#commentsTable").css("width","100%");
+        }
+
+        /**
+        *Function called on click action of Update button.
+        */
+        $("#updateReviewbutton").click(function updateReview() {
+            updatedCommentList = [];
+            var commentJson = getNewComments();
+            CR_App.ReviewConsoleController.updateCodeReviewComments(
+                reviewId,commentJson,
+                function(result,event) {
+                   if(event.status) {
+                        $("#updateMessage").show();
+                        $("#updateErrorMessage").hide();
+                   }
+                   else {
+                        $("#updateErrorMessage").show();
+                        $("#updateMessage").hide();
+                   }
+                }
+            );
+        });
+
+        /**
+        *Function called on click action of Update button.
+        */
+        $("#updateClosebutton").click(function updateReview() {
+            updatedCommentList = [];
+            $("#barChartPanel").show();
+            $("#pieChartPanel").hide();
+            var commentJson = getNewComments();
+            CR_App.ReviewConsoleController.updateCodeReviewComments(
+                reviewId,commentJson,
+                function(result,event) {
+                    setReviewerTable();
+                    setAssigneeTable();
+                    $("#assigneeControl").click();
+                }
+            );
+        });
+
+        function checkInputChange() {
+        $(":input").change(function() {
+                $("#updateMessage").hide();
+                $("#updateErrorMessage").hide();
+            });
+        }
+
+        /**
+        *Function traverses all the comments and creates a JSON string of them.
+        */
+        function getNewComments() {
+            var updatedCommentJson = '';
+                $("#commentRows tr").each(function() {
+                    
+                    var index = $(this).find(".serialNo").text();
+                    commentResults[index-1].codeLine = $(this).find(".code-line").text();
+                    if($(this).find(".statusData").length == 0 && userSelected == 2) {
+                        commentResults[index-1].status = 'Closed';
+                    }
+                    else {
+                        commentResults[index-1].status = $(this).find(".status :selected").text();
+                    }
+                    var text = $(this).find(".remarks");
+                    commentResults[index-1].remarks = text.find(".remarkText").val();
+                    updatedCommentJson = updatedCommentJson + JSON.stringify(commentResults[index-1]) + '\n';
+                });
+                countIssues();
+                drawingPieCharts();
+            return updatedCommentJson;
+        }
+
+        /**
+        *Function called on click of close button.
+        */
+        $("#closeReviewButton").click(function() {
+            //window.location="/home/home.jsp";
+            setAssigneeTable();
+            setReviewerTable();
+            if(userSelected == 1){
+                 $("#reviewDiv").show();
+                 $("#assigneeDiv").hide();
+                 $('#commentsTableDiv').hide();
+                 $('.updateReviewDiv').hide();
+            }
+            else{
+                $("#reviewDiv").hide();
+                $("#assigneeDiv").show();
+                $('#commentsTableDiv').hide();
+                $('.updateReviewDiv').hide();
+            }
+            $("#barChartPanel").show();
+            $("#pieChartPanel").hide();
+            $("#updateMessage").hide();
+            $("#updateErrorMessage").hide();
+            $("#reviewTitle").text('');
+        });
+        
+        /*
+        *On click event of reset button.
+        */
+        $(".updateReviewDiv").on('click', '#resetList', function(event) {
+            $("#updateMessage").hide();
+            $("#updateErrorMessage").hide();
+            $('#commentsTable tr').each(function() {
+                $(this).show();
+            });
+        });
+
+// google charts
+// google charts
+    var data;
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawingcharts);
+
+    function drawingcharts() {
+        drawChartByRecordCount();
+        drawChartByTotalIssues();
+    }
+
+        function drawChart(view, options, Id) {
+            var chart = new google.visualization.ColumnChart(document.getElementById(Id));
+            chart.draw(view, options);
+        }
+        
+        function drawChartByRecordCount() {
+            data = google.visualization.arrayToDataTable([
+                   ['Task','Code Review Count', { role: 'style'}],
+                   [firstWeek.toDateString(),reviewCountFirst,"{!$Label.ReviewConsole_Color_HighSeverity}"],
+                   [secondWeek.toDateString(),reviewCountSecond,"{!$Label.ReviewConsole_Color_BlockerIssue}"],
+                   [thirdWeek.toDateString(),reviewCountThird,"{!$Label.ReviewConsole_Color_LowSeverity}"],
+                   [fourthWeek.toDateString(),reviewCountFourth,"{!$Label.ReviewConsole_Color_MediumSeverity}"]
+            ]);
+            var options = {width: 300,
+                          height: 200,
+                          bar: {groupWidth: "95%"},
+                          legend: { position: "none" },
+                          title: "{!$Label.ReviewConsole_BarChart_ReviewCount}"
+            };
+            var Id = 'barChartReviewCount';
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+            drawChart(view, options, Id);
+        }
+
+        function drawChartByTotalIssues() {
+            data = google.visualization.arrayToDataTable([
+                   ['Task', 'Issue Count',{ role: 'style' }],
+                   [firstWeek.toDateString(),totalIssueFirstWeek,"{!$Label.ReviewConsole_Color_ResolvedIssue}"],
+                   [secondWeek.toDateString(),totalIssueSecondWeek,"{!$Label.ReviewConsole_Color_OpenIssue}"],
+                   [thirdWeek.toDateString(),totalIssueThirdWeek,"{!$Label.ReviewConsole_Color_ClosedIssue}"],
+                   [fourthWeek.toDateString(),totalIssueFourthWeek,"{!$Label.ReviewConsole_Color_IssueInDiscussion}"]
+            ]);
+            var options = {
+                title: "{!$Label.ReviewConsole_BarChart_IssueCount}",
+                width: 300,
+                height: 200,
+                bar: {groupWidth: "95%"},
+                legend: { position: "none" }
+            };
+            var Id = 'barChartIssueCount';
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+            drawChart(view, options, Id);
+        }
+
+//Attachment pie chart
+        function countIssues(){
+            severityCount = {
+                low : 0,
+                medium : 0,
+                high : 0,
+                blocker : 0
+            }
+            statusCount = {
+                open : 0,
+                discussion : 0,
+                closed : 0,
+                resolved : 0
+            }
+            for(var i = 0; i < commentResults.length; i++) {
+                if(commentResults[i].severity == 'Low') {
+                    severityCount.low ++;
+                }
+                else if(commentResults[i].severity == 'Medium') {
+                    severityCount.medium ++;
+                }
+                else if(commentResults[i].severity == 'High') {
+                    severityCount.high ++;
+                }
+                else if(commentResults[i].severity == 'Blocker') {
+                    severityCount.blocker ++;
+                }
+                if(commentResults[i].status == 'Open') {
+                    statusCount.open ++;
+                }
+                else if(commentResults[i].status == 'Discussion Required') {
+                    statusCount.discussion ++;
+                }
+                else if(commentResults[i].status == 'Closed') {
+                    statusCount.closed ++;
+                }
+                else if(commentResults[i].status == 'Resolved') {
+                    statusCount.resolved ++;
+                }
+            }
+        }
+
+        function drawingPieCharts() {
+            drawChartBySeverity();
+            drawChartByStatus();
+        }
+
+        var severityPieChart;
+        var dataForSeverity;
+        function drawChartBySeverity() {
+            dataForSeverity = google.visualization.arrayToDataTable([
+                ['Task', 'Severity Count'],
+                ["{!$Label.CodeDetail_IssueCount_High}",severityCount.high],
+                ["{!$Label.CodeDetail_IssueCount_Blocker}",severityCount.blocker],
+                ["{!$Label.CodeDetail_IssueCount_Low}",severityCount.low],
+                ["{!$Label.CodeDetail_IssueCount_Medium}",severityCount.medium]
+            ]);
+            var options = {
+                //chartArea:{left:"40%",top:"0%",width:'60%',height:'70%'},
+                title: "{!$Label.ReviewConsole_PieChart_Severity}",
+                colors: ["{!$Label.ReviewConsole_Color_HighSeverity}",
+                         "{!$Label.ReviewConsole_Color_BlockerIssue}",
+                         "{!$Label.ReviewConsole_Color_LowSeverity}",
+                         "{!$Label.ReviewConsole_Color_MediumSeverity}"],
+                width: 350,
+                height: 150,
+                pieSliceText:'value'
+            };
+            severityPieChart = new google.visualization.PieChart(document.getElementById('piechartSeverity'));
+            severityPieChart.draw(dataForSeverity, options);
+            google.visualization.events.addListener(severityPieChart, 'select', selectHandlerForSeverity);
+        }
+
+        /*
+        * Event Listener for Severity Pie Chart
+        */
+        function selectHandlerForSeverity() {
+            var selectedvalue = dataForSeverity.getValue(severityPieChart.getSelection()[0].row, 0);
+            displayRowBySeverity(selectedvalue);
+        }
+
+        var statusPieChart;
+        var dataForStatus;
+        function drawChartByStatus() {
+            dataForStatus = google.visualization.arrayToDataTable([
+                ['Task', 'Status Count'],
+                ["{!$Label.CodeDetail_IssueCount_Resolved}",statusCount.resolved],
+                ["{!$Label.CodeDetail_IssueCount_Open}",statusCount.open],
+                ["{!$Label.CodeDetail_IssueCount_Closed}",statusCount.closed],
+                ["{!$Label.CodeDetail_IssueCount_Discussion}",statusCount.discussion]
+            ]);
+            var options = {
+                //chartArea:{left:"40%",top:"0%",width:'60%',height:'80%'},
+                title: "{!$Label.ReviewConsole_PieChart_Status}",
+                colors: ["{!$Label.ReviewConsole_Color_ResolvedIssue}",
+                         "{!$Label.ReviewConsole_Color_OpenIssue}",
+                         "{!$Label.ReviewConsole_Color_ClosedIssue}",
+                         "{!$Label.ReviewConsole_Color_IssueInDiscussion}"],
+                width: 350,
+                height: 150,
+                pieSliceText:'value'
+            };
+            statusPieChart = new google.visualization.PieChart(document.getElementById('piechartStatus'));
+            statusPieChart.draw(dataForStatus, options);
+            google.visualization.events.addListener(statusPieChart, 'select', selectHandlerForStatus);
+        }
+
+        /*
+        * Event Listener for Status Pie Chart
+        */
+        function selectHandlerForStatus() {
+            var selectedvalue = dataForStatus.getValue(statusPieChart.getSelection()[0].row, 0);
+            displayRowByStatus(selectedvalue);
+        } 
+
+        /*
+        * Function to get the record details week wise for assignee 
+        */
+        function sortDataWeekAssignedTo() {
+            var totalIssues = 0;
+            var todayDate = new Date();
+            firstWeek = new Date();
+            firstWeek.setDate(firstWeek.getDate() - todayDate.getDay());
+            secondWeek = new Date();
+            secondWeek.setDate(secondWeek.getDate() - (todayDate.getDay()+7));
+            thirdWeek = new Date();
+            thirdWeek.setDate(thirdWeek.getDate() - (todayDate.getDay()+14));
+            fourthWeek = new Date();
+            fourthWeek.setDate(fourthWeek.getDate() - (todayDate.getDay()+21));
+            totalIssueFirstWeek = 0;
+            totalIssueSecondWeek = 0;
+            totalIssueThirdWeek = 0;
+            totalIssueFourthWeek = 0;
+            reviewCountFirst = 0;
+            reviewCountSecond = 0;
+            reviewCountThird = 0;
+            reviewCountFourth = 0;
+
+            <apex:repeat value="{!reviewsAssignedTo}" var="assignee">
+                var createdDate = new Date('{!assignee.CreatedDate}');
+                if(createdDate > firstWeek){
+                    reviewCountFirst++;
+                    totalIssueFirstWeek += Number('{!assignee.CR_App__Total_Issue__c}');
+                }
+                if(createdDate < firstWeek && createdDate > secondWeek){
+                    totalIssueSecondWeek += Number('{!assignee.CR_App__Total_Issue__c}');
+                    reviewCountSecond++;
+                }
+                if(createdDate < secondWeek && createdDate > thirdWeek){
+                    totalIssueThirdWeek += Number('{!assignee.CR_App__Total_Issue__c}');
+                    reviewCountThird++;
+                }
+                if(createdDate < thirdWeek && createdDate > fourthWeek){
+                    totalIssueFourthWeek += Number('{!assignee.CR_App__Total_Issue__c}');
+                    reviewCountFourth++;
+                }
+            </apex:repeat>
+        }
+
+        /*
+        * Function to get the record details week wise for reviewer 
+        */
+        function sortDataWeekReviewedBy() {
+            var totalIssues = 0;
+            var todayDate = new Date();
+            firstWeek = new Date();
+            firstWeek.setDate(firstWeek.getDate() - todayDate.getDay());
+            secondWeek = new Date();
+            secondWeek.setDate(secondWeek.getDate() - (todayDate.getDay()+7));
+            thirdWeek = new Date();
+            thirdWeek.setDate(thirdWeek.getDate() - (todayDate.getDay()+14));
+            fourthWeek = new Date();
+            fourthWeek.setDate(fourthWeek.getDate() - (todayDate.getDay()+21));
+            totalIssueFirstWeek = 0;
+            totalIssueSecondWeek = 0;
+            totalIssueThirdWeek = 0;
+            totalIssueFourthWeek = 0;
+            reviewCountFirst = 0;
+            reviewCountSecond = 0;
+            reviewCountThird = 0;
+            reviewCountFourth = 0;
+
+            <apex:repeat value="{!reviewsReviewedBy}" var="assignee">
+                var createdDate = new Date('{!assignee.CreatedDate}');
+                if(createdDate > firstWeek){
+                    reviewCountFirst++;
+                    totalIssueFirstWeek = totalIssueFirstWeek + Number('{!assignee.CR_App__Total_Issue__c}');
+                }
+                if(createdDate < firstWeek && createdDate > secondWeek){
+                    totalIssueSecondWeek = totalIssueSecondWeek + Number('{!assignee.CR_App__Total_Issue__c}');
+                    reviewCountSecond++;
+                }
+                if(createdDate < secondWeek && createdDate > thirdWeek){
+                    totalIssueThirdWeek = totalIssueThirdWeek + Number('{!assignee.CR_App__Total_Issue__c}');
+                    reviewCountThird++;
+                }
+                if(createdDate < thirdWeek && createdDate > fourthWeek){
+                    totalIssueFourthWeek = totalIssueFourthWeek + Number('{!assignee.CR_App__Total_Issue__c}');
+                    reviewCountFourth++;
+                }
+            </apex:repeat>
+
+        }
+// google charts
+// google charts
+    /**
+     * DeploymentUpdateTable header click listener
+     * Sorts the table based on clicked column
+     */
+        function getHeaderIndex(tableId, headerValue) {
+            var thIndex = -1;
+            $('#'+tableId).find('th').each(function(index, value) {
+                if ($(this).text() == headerValue) {
+                    thIndex = index;
+                }
+            });
+            return thIndex;
+        }
+
+        function sortTable(tableId, columnIndex, asc) {
+            var tbody = $('#'+tableId).find('tbody');
+            var rows = tbody.children(),
+            rlen = rows.length,
+            arr = [],
+            i,
+            j,
+            cells,
+            clen;
+            var rowMap = {};
+            // Fill the array with values from the table
+            for (i = 0; i < rlen; i++) {
+                cells = rows[i].cells;
+                clen = cells.length;
+                arr[i] = [];
+                for (j = 0; j < clen; j++) {
+                    var currentCell = $(cells[j]);
+                    if (currentCell.children().hasClass('data-input')) {
+                        arr[i][j] = currentCell.find('.data-input').val();
+                    } else {
+                        arr[i][j] = currentCell.text();
+                    }
+                }
+                arr[i].dataToDisplay = $(rows[i]);
+            }
+            // Sort the array by the specified column number (col) and order (asc)
+            arr.sort(function(a, b) {
+            if ((isNaN(a[columnIndex])) && (isNaN(a[columnIndex]))) {
+                return (a[columnIndex] == b[columnIndex]) ? 0 : ((a[columnIndex] > b[columnIndex]) ? asc : -1*asc);
+            } else {
+                return (a[columnIndex] == b[columnIndex]) ? 0 : ((Number(a[columnIndex]) > Number(b[columnIndex])) ? asc : -1*asc);
+            }
+            });
+            // Replace table rows with sorted rows
+            tbody.html('');
+            for (i = 0; i < rlen; i++) {
+                tbody.append(arr[i].dataToDisplay);
+            }
+        }
+    </script>
+
+    <!-- Template for Review Comments table. Used to generate the table using underscore.js -->
+    <script type="text/html" id="commentsTableTemplate">
+        <table id="commentsTable">
+            <thead>
+                <tr>
+                    <th class="serialHead">#</th>
+                    <th id="categoryHead" data-sortorder="-1">Category <image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /></th>
+                    <th id="elementHead" data-sortorder="-1">Element <image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /></th>
+                    <th id="lineHead">Line #</th>
+                    <th id="codeHead">Code </th>
+                    <th id="commentHead" >Comments </th>
+                    <th id="severityHead" data-sortorder="-1">Severity <image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /></th>
+                    <th id="statusHead" data-sortorder="-1">Status <image src="{!URLFOR($Resource.CR_App__SortImage,'sort.png')}" Class="iconimages" /></th>
+                    <th id="remarkHead" >Remarks</th>
+                </tr>
+            </thead>
+            <tbody id="commentRows">
+                <% _.each(comments, function(item, key, list) { %>
+                    <tr>
+                        <td class="serialNo"><%= (key+1) %></td>
+                        <td class="category"><%= item.componentCategory %></td>
+                        <td class="element"><%= item.componentName %></td>
+                        <td class="line-number"><%= (item.codeLine != "Other options component") ? item.lineNumber :"--" %></td>
+                        <td class="code-line"><%= (item.codeLine != "Other options component") ? item.codeLine :"--" %></td>
+                        <td class="comment"><%= item.comment %></td>
+                        <td class="severity"><%= item.severity %></td>
+                        <td class="status">
+                            <% if(item.status == "Closed" && userSelected == 2) {%> 
+                                <span id="close">Closed<span> 
+                            <% }  else {%> 
+                            <select id="statusSelect" class="statusData data-input">
+                            <% _.each(options, function(element, index, list) { %>
+                            <option value="<%= element %>" <%= (element == item.status) ? "selected" :"" %> ><%= element %></option>
+                            <% }); %>
+                            </select>
+                            <% } %>
+                        </td>
+                        <td class="remarks">
+                            <textarea class="remarkText data-input" <%= (item.status == "Closed" && userSelected == 2) ? "disabled" : "" %>><%=item.remarks ? item.remarks : ''%></textarea>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </script>
+</apex:page>

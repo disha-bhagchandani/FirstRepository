@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AddReviewComment_AddComment_Button</fullName>
+        <categories>Add Review Comment Button Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReviewComment_AddComment_Button</shortDescription>
+        <value>Add Comment</value>
+    </labels>
+    <labels>
+        <fullName>AddReviewComment_CollapsibleMenu_History</fullName>
+        <categories>Add Review Comment Collapsible Menu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReviewComment_CollapsibleMenu_History</shortDescription>
+        <value>Component History</value>
+    </labels>
+    <labels>
+        <fullName>AddReviewComment_CollapsibleMenu_IssueDetail</fullName>
+        <categories>Add Review Comment Collapsible Menu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReviewComment_CollapsibleMenu_IssueDetail</shortDescription>
+        <value>Issue #</value>
+    </labels>
+    <labels>
+        <fullName>AddReviewComment_CollapsibleMenu_SeverityCount</fullName>
+        <categories>Add Review Comment Collapsible Menu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReviewComment_CollapsibleMenu_SeverityCount</shortDescription>
+        <value>Issue by Severity</value>
+    </labels>
+    <labels>
+        <fullName>AddReviewComment_CollapsibleMenu_StatusCount</fullName>
+        <categories>Add Review Comment Collapsible Menu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReviewComment_CollapsibleMenu_StatusCount</shortDescription>
+        <value>Issue by Status</value>
+    </labels>
+    <labels>
+        <fullName>AddReviewComment_ComponentSubcategory</fullName>
+        <categories>Add Review Comment component sub-category</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReviewComment_ComponentSubcategory</shortDescription>
+        <value>Subcategory</value>
+    </labels>
+    <labels>
+        <fullName>AddReviewComment_Search_Button</fullName>
+        <categories>Add Review Comment Button Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReviewComment_Search_Button</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>AddReview_OtherOption_AddRowMessage</fullName>
+        <categories>Add Review Comment Other Option Add Row</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReview_OtherOption_AddRowMessage</shortDescription>
+        <value>Please add comments first.</value>
+    </labels>
+    <labels>
+        <fullName>AddReview_OtherOption_DeleteCommentTooltip</fullName>
+        <categories>Add Review Comment Other Option Delete</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReview_OtherOption_DeleteCommentTooltip</shortDescription>
+        <value>Delete Comment</value>
+    </labels>
+    <labels>
+        <fullName>AddReview_OtherOption_SaveCommentTooltip</fullName>
+        <categories>Add Review Comment Other Option Save</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReview_OtherOption_SaveCommentTooltip</shortDescription>
+        <value>Save Comment</value>
+    </labels>
+    <labels>
+        <fullName>AddReview_OtherOption_SaveErrorMessage</fullName>
+        <categories>Add Review Comment Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReview_OtherOption_SaveErrorMessage</shortDescription>
+        <value>Please enter Component Name or Comments properly.</value>
+    </labels>
+    <labels>
+        <fullName>AddReview_OtherOption_SaveSuccessMessage</fullName>
+        <categories>Add Review Comment Successful Save Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddReview_OtherOption_SaveSuccessMessage</shortDescription>
+        <value>Comment has been saved successfully.</value>
+    </labels>
+    <labels>
+        <fullName>AssigneeTable_Header_Action</fullName>
+        <categories>Assignee Table Header Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssigneeTable_Header_Action</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>AssigneeTable_Header_AssignDate</fullName>
+        <categories>Assignee Table Header Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssigneeTable_Header_AssignDate</shortDescription>
+        <value>Assigned On</value>
+    </labels>
+    <labels>
+        <fullName>AssigneeTable_Header_ReviewName</fullName>
+        <categories>Assignee Table Header Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssigneeTable_Header_ReviewName</shortDescription>
+        <value>Code Review Name</value>
+    </labels>
+    <labels>
+        <fullName>AssigneeTable_Header_ReviewerName</fullName>
+        <categories>Assignee Table Header Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssigneeTable_Header_ReviewerName</shortDescription>
+        <value>Reviewed By</value>
+    </labels>
+    <labels>
+        <fullName>Autosuggest_Input_Label</fullName>
+        <categories>Code Element Autosuggest Input</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Autosuggest_Input_Label</shortDescription>
+        <value>Component Name</value>
+    </labels>
+    <labels>
+        <fullName>ClosedIssues_Header</fullName>
+        <categories>Review Console</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ClosedIssues_Header</shortDescription>
+        <value>Closed Issue #</value>
+    </labels>
+    <labels>
+        <fullName>CodeCategory_OthersOption</fullName>
+        <categories>Code Component Category</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeCategory_OthersOption</shortDescription>
+        <value>Other</value>
+    </labels>
+    <labels>
+        <fullName>CodeComment_Input_AssignedToLabel</fullName>
+        <categories>Code comment Input Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeComment_Input_AssignedToLabel</shortDescription>
+        <value>Assigned To</value>
+    </labels>
+    <labels>
+        <fullName>CodeComment_Input_CommentDescription_Label</fullName>
+        <categories>Code comment Input Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeComment_Input_CommentDescription_Label</shortDescription>
+        <value>Comment Description</value>
+    </labels>
+    <labels>
+        <fullName>CodeComment_Input_SeverityLabel</fullName>
+        <categories>Code comment Input Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeComment_Input_SeverityLabel</shortDescription>
+        <value>Severity</value>
+    </labels>
+    <labels>
+        <fullName>CodeComponentCategory_OptionLabel</fullName>
+        <categories>Code Component Category</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeComponentCategory_OptionLabel</shortDescription>
+        <value>Component Category</value>
+    </labels>
+    <labels>
+        <fullName>CodeComponentCategory_WrongOptionErrorMessage</fullName>
+        <categories>Code Component Category</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeComponentCategory_WrongOptionErrorMessage</shortDescription>
+        <value>Please select a valid component category.</value>
+    </labels>
+    <labels>
+        <fullName>CodeComponentNames_NoComponentFoundError</fullName>
+        <categories>Code Component Names</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeComponentNames_NoComponentFoundError</shortDescription>
+        <value>No result found !!! Please check the name of code element.</value>
+    </labels>
+    <labels>
+        <fullName>CodeComponentPage_Title</fullName>
+        <categories>Code Component Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeComponentPage_Title</shortDescription>
+        <value>Add Review Comments</value>
+    </labels>
+    <labels>
+        <fullName>CodeDetail_IssueCount_Blocker</fullName>
+        <categories>Code Detail Issue Count</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeDetail_IssueCount_Blocker</shortDescription>
+        <value>Blocker Issues</value>
+    </labels>
+    <labels>
+        <fullName>CodeDetail_IssueCount_Closed</fullName>
+        <categories>Code Detail Issue Count</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeDetail_IssueCount_Closed</shortDescription>
+        <value>Closed Issues</value>
+    </labels>
+    <labels>
+        <fullName>CodeDetail_IssueCount_Discussion</fullName>
+        <categories>Code Detail Issue Count</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeDetail_IssueCount_Discussion</shortDescription>
+        <value>Discussion Required Issues</value>
+    </labels>
+    <labels>
+        <fullName>CodeDetail_IssueCount_High</fullName>
+        <categories>Code Detail Issue Count</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeDetail_IssueCount_High</shortDescription>
+        <value>High Severity Issues</value>
+    </labels>
+    <labels>
+        <fullName>CodeDetail_IssueCount_Low</fullName>
+        <categories>Code Detail Issue Count</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeDetail_IssueCount_Low</shortDescription>
+        <value>Low Severity Issues</value>
+    </labels>
+    <labels>
+        <fullName>CodeDetail_IssueCount_Medium</fullName>
+        <categories>Code Detail Issue Count</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeDetail_IssueCount_Medium</shortDescription>
+        <value>Medium Severity Issues</value>
+    </labels>
+    <labels>
+        <fullName>CodeDetail_IssueCount_Open</fullName>
+        <categories>Code Detail Issue Count</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeDetail_IssueCount_Open</shortDescription>
+        <value>Open Issues</value>
+    </labels>
+    <labels>
+        <fullName>CodeDetail_IssueCount_Resolved</fullName>
+        <categories>Code Detail Issue Count</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeDetail_IssueCount_Resolved</shortDescription>
+        <value>Resolved Issues</value>
+    </labels>
+    <labels>
+        <fullName>CodeElement_CreatedByLabel</fullName>
+        <categories>Code Element Body</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeElement_CreatedByLabel</shortDescription>
+        <value>Created By</value>
+    </labels>
+    <labels>
+        <fullName>CodeElement_CreatedOnLabel</fullName>
+        <categories>Code Element Body</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeElement_CreatedOnLabel</shortDescription>
+        <value>Created On</value>
+    </labels>
+    <labels>
+        <fullName>CodeElement_LastModifiedByLabel</fullName>
+        <categories>Code Element Body</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeElement_LastModifiedByLabel</shortDescription>
+        <value>Last Modified By</value>
+    </labels>
+    <labels>
+        <fullName>CodeElement_ModifiedOnLabel</fullName>
+        <categories>Code Element Body</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodeElement_ModifiedOnLabel</shortDescription>
+        <value>Last Modified On</value>
+    </labels>
+    <labels>
+        <fullName>CodingStandardDoc</fullName>
+        <categories>Review Console</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingStandardDoc</shortDescription>
+        <value>/resource/CR_App__CodingStandards</value>
+    </labels>
+    <labels>
+        <fullName>CommentPopup_ErrorMessage</fullName>
+        <categories>Comment Popup Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CommentPopup_ErrorMessage</shortDescription>
+        <value>Please provide proper comment description !!!</value>
+    </labels>
+    <labels>
+        <fullName>CommentPopup_HeaderLabel</fullName>
+        <categories>Comment Popup Header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CommentPopup_HeaderLabel</shortDescription>
+        <value>Review Comment for Line Number</value>
+    </labels>
+    <labels>
+        <fullName>Header_DateFormat</fullName>
+        <categories>Review Console</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Header_DateFormat</shortDescription>
+        <value>(MM/DD/YYYY)</value>
+    </labels>
+    <labels>
+        <fullName>InformAssignee</fullName>
+        <categories>Code Review App</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InformAssignee</shortDescription>
+        <value>Code Review Completed</value>
+    </labels>
+    <labels>
+        <fullName>InformReviewer</fullName>
+        <categories>Code Review App</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InformReviewer</shortDescription>
+        <value>Code Review Completed</value>
+    </labels>
+    <labels>
+        <fullName>OpenIssues</fullName>
+        <categories>Review Console Table Header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpenIssues</shortDescription>
+        <value>Open Issue #</value>
+    </labels>
+    <labels>
+        <fullName>OtherOptionTabel_Header_Assignee</fullName>
+        <categories>Other Option Table</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OtherOptionTabel_Header_Assignee</shortDescription>
+        <value>Assigned To</value>
+    </labels>
+    <labels>
+        <fullName>OtherOptionTabel_Header_Comment</fullName>
+        <categories>Other Option Table</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OtherOptionTabel_Header_Comment</shortDescription>
+        <value>Comment</value>
+    </labels>
+    <labels>
+        <fullName>OtherOptionTabel_Header_Component</fullName>
+        <categories>Other Option Table</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OtherOptionTabel_Header_Component</shortDescription>
+        <value>Component</value>
+    </labels>
+    <labels>
+        <fullName>OtherOptionTabel_Header_ComponentName</fullName>
+        <categories>Other Option Table</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OtherOptionTabel_Header_ComponentName</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>OtherOptionTabel_Header_SerialNumber</fullName>
+        <categories>Other Option Table</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OtherOptionTabel_Header_SerialNumber</shortDescription>
+        <value>Sr. No.</value>
+    </labels>
+    <labels>
+        <fullName>OtherOptionTabel_Header_Severity</fullName>
+        <categories>Other Option Table</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OtherOptionTabel_Header_Severity</shortDescription>
+        <value>Severity</value>
+    </labels>
+    <labels>
+        <fullName>ResolvedIssuesHeader</fullName>
+        <categories>Review Console Table Header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ResolvedIssuesHeader</shortDescription>
+        <value>Resolved Issue #</value>
+    </labels>
+    <labels>
+        <fullName>ReviewCompleted</fullName>
+        <categories>Code Review App</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewCompleted</shortDescription>
+        <value>Review Completed</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_BarChart_IssueCount</fullName>
+        <categories>Review Console Barchart</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_BarChart_IssueCount</shortDescription>
+        <value>Total Issues per Week</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_BarChart_ReviewCount</fullName>
+        <categories>Review Console Barchart</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_BarChart_ReviewCount</shortDescription>
+        <value>Code Reviews per Week</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_Color_BlockerIssue</fullName>
+        <categories>Review Console Severity Chart Color</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_Color_BlockerIssue</shortDescription>
+        <value>#1B3F8B</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_Color_ClosedIssue</fullName>
+        <categories>Review Console Status Chart Color</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_Color_ClosedIssue</shortDescription>
+        <value>#228B22</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_Color_HighSeverity</fullName>
+        <categories>Review Console Severity Chart Color</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_Color_HighSeverity</shortDescription>
+        <value>#FF0000</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_Color_IssueInDiscussion</fullName>
+        <categories>Review Console Status Chart Color</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_Color_IssueInDiscussion</shortDescription>
+        <value>#FF8C00</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_Color_LowSeverity</fullName>
+        <categories>Review Console Severity Chart Color</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_Color_LowSeverity</shortDescription>
+        <value>#999900</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_Color_MediumSeverity</fullName>
+        <categories>Review Console Severity Chart Color</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_Color_MediumSeverity</shortDescription>
+        <value>#FFA500</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_Color_OpenIssue</fullName>
+        <categories>Review Console Status Chart Color</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_Color_OpenIssue</shortDescription>
+        <value>#CD0000</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_Color_ResolvedIssue</fullName>
+        <categories>Review Console Status Chart Color</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_Color_ResolvedIssue</shortDescription>
+        <value>#66CD00</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_PageTitle</fullName>
+        <categories>Review Console Page Title</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_PageTitle</shortDescription>
+        <value>Review Console</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_PieChart_Severity</fullName>
+        <categories>Review Console Piechart</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_PieChart_Severity</shortDescription>
+        <value>Total Issues by Severity</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_PieChart_Status</fullName>
+        <categories>Review Console Piechart</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_PieChart_Status</shortDescription>
+        <value>Total Issues by Status</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_Update_ErrorMessage</fullName>
+        <categories>Review Console Update</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_Update_ErrorMessage</shortDescription>
+        <value>There are some discrepancies, please try again.</value>
+    </labels>
+    <labels>
+        <fullName>ReviewConsole_Update_SuccessMessage</fullName>
+        <categories>Review Console Update</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewConsole_Update_SuccessMessage</shortDescription>
+        <value>Changes have been updated successfully.</value>
+    </labels>
+    <labels>
+        <fullName>ReviewerTable_Header_Action</fullName>
+        <categories>Reviewer Table Header Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewerTable_Header_Action</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>ReviewerTable_Header_Assignee</fullName>
+        <categories>Reviewer Table Header Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewerTable_Header_Assignee</shortDescription>
+        <value>Assigned To</value>
+    </labels>
+    <labels>
+        <fullName>ReviewerTable_Header_CompleteDate</fullName>
+        <categories>Reviewer Table Header Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewerTable_Header_CompleteDate</shortDescription>
+        <value>Review Completed On</value>
+    </labels>
+    <labels>
+        <fullName>ReviewerTable_Header_ReviewName</fullName>
+        <categories>Reviewer Table Header Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewerTable_Header_ReviewName</shortDescription>
+        <value>Code Review Name</value>
+    </labels>
+    <labels>
+        <fullName>ReviewerTable_Header_StartDate</fullName>
+        <categories>Reviewer Table Header Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewerTable_Header_StartDate</shortDescription>
+        <value>Review Started On</value>
+    </labels>
+    <labels>
+        <fullName>Severity_Blocker</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Severity Blocker</shortDescription>
+        <value>blocker</value>
+    </labels>
+    <labels>
+        <fullName>Severity_High</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Severity High</shortDescription>
+        <value>high</value>
+    </labels>
+    <labels>
+        <fullName>Severity_Low</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Severity Low</shortDescription>
+        <value>low</value>
+    </labels>
+    <labels>
+        <fullName>Severity_Medium</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Severity Medium</shortDescription>
+        <value>medium</value>
+    </labels>
+    <labels>
+        <fullName>Status_Closed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status Closed</shortDescription>
+        <value>closed</value>
+    </labels>
+    <labels>
+        <fullName>Status_Need_Discussion</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status Need Discussion</shortDescription>
+        <value>discussion required</value>
+    </labels>
+    <labels>
+        <fullName>Status_Open</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status Open</shortDescription>
+        <value>open</value>
+    </labels>
+    <labels>
+        <fullName>Status_Resolved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status Resolved</shortDescription>
+        <value>resolved</value>
+    </labels>
+    <labels>
+        <fullName>TotalIssuesHeader</fullName>
+        <categories>Review Console Table Header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TotalIssuesHeader</shortDescription>
+        <value>Total Issue #</value>
+    </labels>
+</CustomLabels>
